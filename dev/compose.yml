@@ -1,0 +1,77 @@
+# Development environment for the Relecture plugin (Podman + podman-compose).
+#
+#   cd dev && podman-compose up -d && ./setup.sh      → http://localhost:8090/wp-admin
+#
+# The repository root is mounted as wp-content/plugins/relecture, so every edit is live.
+#
+# A second, isolated instance (for example to smoke-test the minimum WordPress version)
+# needs its OWN project name (-p): podman-compose puts each project in its own pod, and
+# does not expand variables in the top-level `name:` below.
+#
+#   RELECTURE_ENV=wp65 RELECTURE_PORT=8091 podman-compose -p relecture-wp65 up -d
+#   RELECTURE_ENV=wp65 RELECTURE_PORT=8091 WP_CORE_VERSION=6.5 ./setup.sh
+#
+# Containers and volumes are also named after RELECTURE_ENV, so instances never share data.
+# Remove a second instance by name, never with `down -v` without its RELECTURE_ENV:
+#
+#   podman pod rm -f pod_relecture-wp65 && podman volume rm relecture_wp65_db_data relecture_wp65_wp_data
+name: relecture-dev
+
+services:
+  db:
+    image: docker.io/library/mysql:8.0
+    container_name: relecture_${RELECTURE_ENV:-dev}_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: relecture_root
+      MYSQL_DATABASE: relecture
+      MYSQL_USER: relecture
+      MYSQL_PASSWORD: relecture
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    depends_on:
+      - db
+    image: docker.io/library/wordpress:${WP_IMAGE_TAG:-latest}
+    container_name: relecture_${RELECTURE_ENV:-dev}_wp
+    restart: unless-stopped
+    ports:
+      - "${RELECTURE_PORT:-8090}:80"
+    environment: &wp-env
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: relecture
+      WORDPRESS_DB_PASSWORD: relecture
+      WORDPRESS_DB_NAME: relecture
+      WORDPRESS_DEBUG: 1
+      # "local" lets application passwords work over plain http (tests/security.sh).
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_ENVIRONMENT_TYPE', 'local' );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'WP_DEBUG_DISPLAY', false );
+    volumes:
+      - wp_data:/var/www/html
+      # :z (lowercase) = SHARED SELinux label: the mount is used by two containers.
+      - ..:/var/www/html/wp-content/plugins/relecture:z
+
+  wpcli:
+    depends_on:
+      - db
+      - wordpress
+    image: docker.io/library/wordpress:cli
+    container_name: relecture_${RELECTURE_ENV:-dev}_cli
+    # The cli image (Alpine) runs as www-data=82, but the WordPress files belong to
+    # www-data=33 (Apache/Debian image): force UID 33 so WP-CLI can write.
+    user: "33:33"
+    environment: *wp-env
+    volumes:
+      - wp_data:/var/www/html
+      - ..:/var/www/html/wp-content/plugins/relecture:z
+    # Kept alive for `podman exec` (faster than `run --rm` for every command).
+    command: tail -f /dev/null
+
+volumes:
+  db_data:
+    name: relecture_${RELECTURE_ENV:-dev}_db_data
+  wp_data:
+    name: relecture_${RELECTURE_ENV:-dev}_wp_data
