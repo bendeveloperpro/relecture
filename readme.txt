@@ -1,4 +1,5 @@
 === Relecture ===
+Contributors: bendeveloperpro
 Tags: proofreading, editorial, review, annotation, export
 Requires at least: 6.5
 Tested up to: 7.1
@@ -44,7 +45,7 @@ Tick “Guideline for future content” under a note: it joins the **Guidelines*
 
 = Development =
 
-The source code, development environment and documentation live in the plugin's public repository. The JavaScript and CSS files are shipped unminified: there is no build step.
+The source code, development environment and documentation live on GitHub: https://github.com/bendeveloperpro/relecture. The JavaScript and CSS files are shipped unminified: there is no build step.
 
 == Installation ==
 
@@ -73,6 +74,14 @@ A cell starting with =, +, - or @ could be run as a formula by a spreadsheet (�
 = Is my data deleted when I uninstall the plugin? =
 
 Yes, the plugin's tables and options are removed on every site. To keep them, add `define( 'RELECTURE_KEEP_DATA', true );` to wp-config.php before uninstalling.
+
+== Screenshots ==
+
+1. The review table: original text, correction with its status, and a note that can become a guideline for future content.
+2. Contents to review, with the state of each review.
+3. Guidelines gathered across reviews, ready to export as Markdown for your next articles.
+4. A review exported to Word: an A4 landscape table, ready for a proofreader.
+5. On a phone, each row of the table becomes a card.
 
 == Changelog ==
 

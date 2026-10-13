@@ -1,11 +1,12 @@
 <?php
 /**
  * Plugin Name:       Relecture
+ * Plugin URI:        https://github.com/bendeveloperpro/relecture
  * Description:       Proofread, correct and annotate posts and pages in a three-column table, then export the review to Excel, CSV, Word, Markdown or JSON.
  * Version:           0.1.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
- * Author:            Ben.Dev
+ * Author:            BenDev
  * Author URI:        https://bendev.fr/
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html

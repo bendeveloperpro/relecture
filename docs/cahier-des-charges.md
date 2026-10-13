@@ -439,13 +439,12 @@ et les [Common Issues](https://developer.wordpress.org/plugins/wordpress-org/com
 
 ## 16. Publication
 
-1. **GitHub**, à faire sur demande :
-   - créer le dépôt public (compte `bendeveloperpro`) et pousser ;
-   - activer « Private vulnerability reporting », auquel renvoie SECURITY.md ;
-   - compléter `Plugin URI` et le lien vers les sources dans le readme.
+1. **GitHub** : dépôt public https://github.com/bendeveloperpro/relecture, avec
+   « Private vulnerability reporting » activé (SECURITY.md y renvoie). Les commits portent
+   l'adresse noreply de GitHub.
 2. **wordpress.org**, à faire sur demande :
-   - créer un compte développeur ; son identifiant va dans `Contributors:` du readme ;
-   - préparer une icône (256 × 256), une bannière (1544 × 500) et des captures d'écran ;
+   - compte `bendeveloperpro`, déjà inscrit dans `Contributors:` du readme ;
+   - icône et captures d'écran prêtes dans `.wordpress-org/` ; bannière facultative ;
    - passer la version à 1.0.0 ;
    - soumettre le zip et demander le slug `relecture` ;
    - après validation, publier par SVN (trunk, tags/x.y.z, assets).
@@ -482,8 +481,5 @@ et les [Common Issues](https://developer.wordpress.org/plugins/wordpress-org/com
 
 ## 18. Points ouverts
 
-- En-tête `Author` : « Ben.Dev », https://bendev.fr/, repris de l'extension bendev-rdv, à
-  confirmer.
-- Identifiant wordpress.org (`Contributors`), icône, bannière, captures : à fournir avant la
-  soumission.
-- `Plugin URI` et lien vers le dépôt : à compléter quand le dépôt GitHub existera.
+- Banner wordpress.org (1544 × 500 et 772 × 250) : facultative, pas encore faite.
+- Soumission à wordpress.org : à décider (passage en 1.0.0, § 16).

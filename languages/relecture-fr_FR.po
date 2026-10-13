@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Relecture 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/relecture\n"
-"POT-Creation-Date: 2026-10-13T14:48:37+00:00\n"
+"POT-Creation-Date: 2026-10-13T15:16:13+00:00\n"
 "PO-Revision-Date: 2026-10-13 00:00+0000\n"
-"Last-Translator: Ben.Dev\n"
+"Last-Translator: BenDev\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,11 @@ msgstr ""
 msgid "Relecture"
 msgstr "Relecture"
 
+#. Plugin URI of the plugin
+#: relecture.php
+msgid "https://github.com/bendeveloperpro/relecture"
+msgstr "https://github.com/bendeveloperpro/relecture"
+
 #. Description of the plugin
 #: relecture.php
 msgid ""
@@ -29,8 +34,8 @@ msgstr ""
 
 #. Author of the plugin
 #: relecture.php
-msgid "Ben.Dev"
-msgstr "Ben.Dev"
+msgid "BenDev"
+msgstr "BenDev"
 
 #. Author URI of the plugin
 #: relecture.php
