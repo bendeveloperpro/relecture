@@ -1,0 +1,7 @@
+/vendor/
+/node_modules/
+/composer.lock
+/dist/
+/dev/out/
+/dev/.credentials-*
+.DS_Store
