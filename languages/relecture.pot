@@ -1,0 +1,839 @@
+# Copyright (C) 2026 Ben.Dev
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Relecture 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/relecture\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-13T14:48:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: relecture\n"
+
+#. Plugin Name of the plugin
+#: relecture.php
+msgid "Relecture"
+msgstr ""
+
+#. Description of the plugin
+#: relecture.php
+msgid "Proofread, correct and annotate posts and pages in a three-column table, then export the review to Excel, CSV, Word, Markdown or JSON."
+msgstr ""
+
+#. Author of the plugin
+#: relecture.php
+msgid "Ben.Dev"
+msgstr ""
+
+#. Author URI of the plugin
+#: relecture.php
+msgid "https://bendev.fr/"
+msgstr ""
+
+#: includes/admin/class-admin.php:75
+#: includes/admin/class-admin.php:83
+#: includes/admin/views/list.php:13
+msgid "Contents to review"
+msgstr ""
+
+#: includes/admin/class-admin.php:83
+msgid "Contents"
+msgstr ""
+
+#: includes/admin/class-admin.php:86
+#: includes/admin/views/guidelines.php:31
+#: includes/export/class-exporter.php:398
+#: includes/export/class-exporter.php:468
+msgid "Guidelines for future content"
+msgstr ""
+
+#: includes/admin/class-admin.php:87
+#: includes/admin/views/review.php:168
+msgid "Guidelines"
+msgstr ""
+
+#: includes/admin/class-admin.php:140
+#: includes/admin/class-admin.php:346
+#: includes/admin/class-admin.php:361
+msgid "Sorry, you are not allowed to review this content."
+msgstr ""
+
+#. translators: %s: post title.
+#: includes/admin/class-admin.php:268
+#, php-format
+msgid "Review “%s”"
+msgstr ""
+
+#: includes/admin/class-admin.php:269
+#: includes/admin/class-posts-list-table.php:195
+msgctxt "verb"
+msgid "Review"
+msgstr ""
+
+#: includes/admin/class-admin.php:314
+msgid "Review status updated."
+msgstr ""
+
+#. translators: 1: rows kept, 2: new rows, 3: rows set aside.
+#: includes/admin/class-admin.php:320
+#, php-format
+msgid "Original text updated. Rows kept: %1$d; new: %2$d; set aside because their text is gone: %3$d."
+msgstr ""
+
+#: includes/admin/class-admin.php:327
+msgid "The action could not be completed."
+msgstr ""
+
+#: includes/admin/class-admin.php:403
+#: includes/admin/class-admin.php:422
+#: includes/export/class-exporter.php:92
+#: includes/export/class-guidelines-exporter.php:84
+msgid "Unknown export format."
+msgstr ""
+
+#: includes/admin/class-admin.php:417
+#: includes/class-rest-controller.php:204
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:79
+#: includes/export/class-guidelines-exporter.php:107
+msgid "Guideline"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:80
+msgid "Written about"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:81
+#: includes/export/class-exporter.php:188
+#: includes/export/class-guidelines-exporter.php:109
+msgid "Content"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:82
+#: includes/admin/views/review.php:283
+#: includes/export/class-guidelines-exporter.php:108
+msgid "Status"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:83
+#: includes/export/class-exporter.php:198
+#: includes/export/class-guidelines-exporter.php:112
+msgid "Last change"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:94
+msgid "Mark as integrated"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:95
+msgid "Mark as new"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:108
+msgctxt "guidelines"
+msgid "New"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:109
+msgctxt "guidelines"
+msgid "Integrated"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:110
+msgctxt "guidelines"
+msgid "All"
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:172
+msgid "No guideline in this view. In a review, tick “Guideline for future content” under a note to collect it here."
+msgstr ""
+
+#: includes/admin/class-guidelines-list-table.php:185
+msgid "Select this guideline"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:65
+#: includes/class-labels.php:95
+msgid "Title"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:66
+#: includes/export/class-exporter.php:189
+msgid "Type"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:67
+msgid "Publication"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:68
+#: includes/export/class-exporter.php:193
+#: includes/export/class-exporter.php:284
+msgctxt "noun"
+msgid "Review"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:69
+#: includes/admin/views/review.php:166
+msgid "Corrections"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:70
+#: includes/admin/views/review.php:167
+msgid "Notes"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:71
+msgid "Last review change"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:146
+msgid "No content found."
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:163
+msgid "Filter by type"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:164
+msgid "All types"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:171
+msgid "Filter by review state"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:172
+msgid "All review states"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:173
+#: includes/admin/class-posts-list-table.php:233
+msgid "Not reviewed yet"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:179
+msgid "Filter"
+msgstr ""
+
+#. translators: %s: title of the reviewed content.
+#: includes/admin/class-posts-list-table.php:192
+#: includes/admin/views/review.php:33
+msgid "(no title)"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:199
+#: includes/admin/views/review.php:37
+msgid "View"
+msgstr ""
+
+#: includes/admin/class-posts-list-table.php:203
+#: includes/admin/views/review.php:40
+msgid "Edit"
+msgstr ""
+
+#. translators: %s: human time difference, e.g. “3 hours”.
+#: includes/admin/class-posts-list-table.php:251
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#. translators: 1: date or time, 2: user name.
+#: includes/admin/class-posts-list-table.php:255
+#: includes/export/class-exporter.php:249
+#, php-format
+msgid "%1$s by %2$s"
+msgstr ""
+
+#: includes/admin/views/guidelines.php:25
+msgid "Markdown (for a prompt or a style guide)"
+msgstr ""
+
+#: includes/admin/views/guidelines.php:26
+#: includes/export/class-exporter.php:33
+msgid "CSV"
+msgstr ""
+
+#: includes/admin/views/guidelines.php:27
+msgid "JSON"
+msgstr ""
+
+#. translators: %d: number of guidelines.
+#: includes/admin/views/guidelines.php:40
+#, php-format
+msgid "%d guideline updated."
+msgid_plural "%d guidelines updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/views/guidelines.php:49
+msgid "Notes ticked “Guideline for future content” in your reviews. Export them to feed the instructions of your next articles, then mark them as integrated."
+msgstr ""
+
+#: includes/admin/views/guidelines.php:56
+msgid "Export the guidelines shown"
+msgstr ""
+
+#: includes/admin/views/guidelines.php:64
+#: includes/admin/views/review.php:193
+msgid "Export"
+msgstr ""
+
+#: includes/admin/views/list.php:16
+msgid "Pick a post or a page: its title and text blocks open in a table with the original text, a correction and a note for each one. Nothing you type changes the content itself."
+msgstr ""
+
+#: includes/admin/views/list.php:21
+msgid "Search contents"
+msgstr ""
+
+#. translators: %s: title of the reviewed content.
+#: includes/admin/views/review.php:33
+#: includes/export/class-exporter.php:260
+#, php-format
+msgid "Review: %s"
+msgstr ""
+
+#: includes/admin/views/review.php:42
+msgid "All contents"
+msgstr ""
+
+#: includes/admin/views/review.php:51
+msgid "This content has not been reviewed yet. Starting a review takes a snapshot of its title and text blocks; the content itself is never changed."
+msgstr ""
+
+#: includes/admin/views/review.php:52
+msgid "Start the review"
+msgstr ""
+
+#. translators: %d: review round number.
+#: includes/admin/views/review.php:73
+#, php-format
+msgid "Round %d"
+msgstr ""
+
+#. translators: 1: date, 2: user name.
+#: includes/admin/views/review.php:76
+#, php-format
+msgid "Started on %1$s by %2$s"
+msgstr ""
+
+#. translators: %s: date.
+#: includes/admin/views/review.php:78
+#, php-format
+msgid "Started on %s"
+msgstr ""
+
+#: includes/admin/views/review.php:87
+msgid "Rounds:"
+msgstr ""
+
+#. translators: 1: round number, 2: review status.
+#: includes/admin/views/review.php:93
+#, php-format
+msgid "no. %1$d (%2$s)"
+msgstr ""
+
+#: includes/admin/views/review.php:112
+#: includes/export/class-exporter.php:206
+msgid "The content changed after this review started: some original texts may be out of date."
+msgstr ""
+
+#: includes/admin/views/review.php:117
+msgid "Update the original text"
+msgstr ""
+
+#: includes/admin/views/review.php:118
+msgid "Corrections and notes stay attached to their text; rows whose text is gone are kept apart."
+msgstr ""
+
+#: includes/admin/views/review.php:127
+msgid "Mark the review as complete"
+msgstr ""
+
+#: includes/admin/views/review.php:129
+msgid "Mark the corrections as applied"
+msgstr ""
+
+#: includes/admin/views/review.php:130
+msgid "Back to “in progress”"
+msgstr ""
+
+#: includes/admin/views/review.php:132
+msgid "Reopen this review"
+msgstr ""
+
+#: includes/admin/views/review.php:145
+msgid "Start a new review round"
+msgstr ""
+
+#: includes/admin/views/review.php:150
+msgid "This review is closed: its corrections were applied. It stays here for the record; reopen it to change it."
+msgstr ""
+
+#: includes/admin/views/review.php:154
+msgid "Rows to show"
+msgstr ""
+
+#: includes/admin/views/review.php:155
+msgid "All rows"
+msgstr ""
+
+#: includes/admin/views/review.php:156
+msgid "With feedback"
+msgstr ""
+
+#: includes/admin/views/review.php:157
+msgid "Without feedback"
+msgstr ""
+
+#: includes/admin/views/review.php:160
+msgid "Start corrections from the original text"
+msgstr ""
+
+#. translators: %s: a label such as “Content” or “Corrections”; French typography adds a non-breaking space before the colon.
+#: includes/admin/views/review.php:175
+#: includes/export/class-exporter.php:323
+#: includes/export/class-exporter.php:436
+#, php-format
+msgid "%s:"
+msgstr ""
+
+#: includes/admin/views/review.php:186
+msgid "Export format"
+msgstr ""
+
+#: includes/admin/views/review.php:192
+msgid "Only rows with feedback"
+msgstr ""
+
+#: includes/admin/views/review.php:197
+msgid "JavaScript is needed to save your corrections and notes."
+msgstr ""
+
+#: includes/admin/views/review.php:200
+msgid "Original text, correction and note of each element of the content"
+msgstr ""
+
+#: includes/admin/views/review.php:203
+#: includes/export/class-exporter.php:137
+#: includes/export/class-exporter.php:386
+#: includes/export/class-guidelines-exporter.php:111
+msgid "Original text"
+msgstr ""
+
+#: includes/admin/views/review.php:204
+#: includes/admin/views/review.php:273
+#: includes/export/class-exporter.php:138
+#: includes/export/class-exporter.php:387
+#: includes/export/class-exporter.php:455
+msgid "Correction"
+msgstr ""
+
+#: includes/admin/views/review.php:205
+#: includes/admin/views/review.php:295
+#: includes/export/class-exporter.php:140
+#: includes/export/class-exporter.php:388
+#: includes/export/class-exporter.php:462
+msgid "Note"
+msgstr ""
+
+#: includes/admin/views/review.php:224
+msgid "Rows whose text is no longer in the content (kept for the record)"
+msgstr ""
+
+#. translators: %s: title of a synced pattern.
+#: includes/admin/views/review.php:240
+#, php-format
+msgid "The pattern “%s” is shared with other contents: it is reviewed separately."
+msgstr ""
+
+#: includes/admin/views/review.php:243
+msgid "Review this pattern"
+msgstr ""
+
+#. translators: 1: row number, 2: element label.
+#: includes/admin/views/review.php:264
+#, php-format
+msgid "row %1$d (%2$s)"
+msgstr ""
+
+#. translators: %s: row name, e.g. “row 3 (H2)”.
+#: includes/admin/views/review.php:277
+#, php-format
+msgid "Correction of %s"
+msgstr ""
+
+#: includes/admin/views/review.php:291
+msgid "Copy the original text"
+msgstr ""
+
+#. translators: %s: row name, e.g. “row 3 (H2)”.
+#: includes/admin/views/review.php:299
+#, php-format
+msgid "Note on %s"
+msgstr ""
+
+#: includes/admin/views/review.php:305
+#: includes/class-labels.php:55
+msgid "Guideline for future content"
+msgstr ""
+
+#. translators: %d: ID of a synced pattern.
+#: includes/class-extractor.php:338
+#, php-format
+msgid "Pattern #%d"
+msgstr ""
+
+#: includes/class-labels.php:27
+msgid "In progress"
+msgstr ""
+
+#: includes/class-labels.php:28
+msgid "Review complete"
+msgstr ""
+
+#: includes/class-labels.php:29
+msgid "Corrections applied"
+msgstr ""
+
+#: includes/class-labels.php:40
+msgid "To validate"
+msgstr ""
+
+#: includes/class-labels.php:41
+msgid "Accepted"
+msgstr ""
+
+#: includes/class-labels.php:42
+msgid "Rejected"
+msgstr ""
+
+#: includes/class-labels.php:43
+msgid "Applied"
+msgstr ""
+
+#: includes/class-labels.php:54
+msgid "Note on this content"
+msgstr ""
+
+#: includes/class-labels.php:66
+msgctxt "one guideline"
+msgid "New"
+msgstr ""
+
+#: includes/class-labels.php:67
+msgctxt "one guideline"
+msgid "Integrated"
+msgstr ""
+
+#: includes/class-labels.php:97
+msgid "Excerpt"
+msgstr ""
+
+#: includes/class-labels.php:99
+#: includes/class-labels.php:153
+msgid "Caption"
+msgstr ""
+
+#: includes/class-labels.php:101
+#: includes/class-labels.php:163
+msgid "Alternative text"
+msgstr ""
+
+#: includes/class-labels.php:103
+msgid "Quote source"
+msgstr ""
+
+#: includes/class-labels.php:105
+msgid "Summary"
+msgstr ""
+
+#: includes/class-labels.php:107
+#: includes/class-labels.php:148
+msgid "List item"
+msgstr ""
+
+#: includes/class-labels.php:109
+msgid "Synced pattern"
+msgstr ""
+
+#. translators: 1: row number, 2: column number.
+#: includes/class-labels.php:113
+#, php-format
+msgid "Table cell (row %1$d, column %2$d)"
+msgstr ""
+
+#: includes/class-labels.php:131
+#: includes/class-labels.php:165
+msgid "Text"
+msgstr ""
+
+#: includes/class-labels.php:146
+msgid "Paragraph"
+msgstr ""
+
+#: includes/class-labels.php:150
+msgid "Quote"
+msgstr ""
+
+#: includes/class-labels.php:156
+msgid "Table cell"
+msgstr ""
+
+#: includes/class-labels.php:159
+msgid "Definition list"
+msgstr ""
+
+#: includes/class-labels.php:161
+msgid "Preformatted text"
+msgstr ""
+
+#: includes/class-plugin.php:108
+msgid "Review this page"
+msgstr ""
+
+#: includes/class-rest-controller.php:334
+#: includes/class-review-service.php:261
+msgid "This review is closed. Reopen it to edit it."
+msgstr ""
+
+#: includes/class-review-service.php:257
+msgid "This review no longer exists."
+msgstr ""
+
+#: includes/class-review-service.php:352
+msgid "This row was changed by someone else in the meantime. Reload the page to see the latest version."
+msgstr ""
+
+#: includes/class-review-service.php:367
+msgid "Unknown review status."
+msgstr ""
+
+#: includes/class-review-service.php:372
+msgid "Only the latest review of a content can be reopened."
+msgstr ""
+
+#: includes/export/class-exporter.php:31
+msgid "Excel (.xlsx)"
+msgstr ""
+
+#: includes/export/class-exporter.php:32
+msgid "Word (.docx)"
+msgstr ""
+
+#: includes/export/class-exporter.php:34
+msgid "Markdown (for an AI)"
+msgstr ""
+
+#: includes/export/class-exporter.php:35
+msgid "JSON (for an AI or a script)"
+msgstr ""
+
+#: includes/export/class-exporter.php:135
+#: includes/export/class-exporter.php:384
+msgid "No."
+msgstr ""
+
+#: includes/export/class-exporter.php:136
+#: includes/export/class-exporter.php:385
+#: includes/export/class-guidelines-exporter.php:110
+msgid "Element"
+msgstr ""
+
+#: includes/export/class-exporter.php:139
+msgid "Correction status"
+msgstr ""
+
+#: includes/export/class-exporter.php:141
+msgid "Note type"
+msgstr ""
+
+#: includes/export/class-exporter.php:142
+msgid "Block"
+msgstr ""
+
+#: includes/export/class-exporter.php:143
+msgid "Path"
+msgstr ""
+
+#: includes/export/class-exporter.php:144
+#: includes/export/class-guidelines-exporter.php:114
+msgid "ID"
+msgstr ""
+
+#. translators: %s: element label, e.g. “Paragraph”.
+#: includes/export/class-exporter.php:173
+#, php-format
+msgid "%s (removed from the content)"
+msgstr ""
+
+#: includes/export/class-exporter.php:190
+msgid "Publication status"
+msgstr ""
+
+#: includes/export/class-exporter.php:191
+#: includes/export/class-guidelines-exporter.php:113
+msgid "Address"
+msgstr ""
+
+#. translators: 1: round number, 2: review status.
+#: includes/export/class-exporter.php:195
+#, php-format
+msgid "Round %1$d · %2$s"
+msgstr ""
+
+#: includes/export/class-exporter.php:197
+msgid "Started"
+msgstr ""
+
+#: includes/export/class-exporter.php:199
+#: includes/export/class-exporter.php:440
+msgid "Rows"
+msgstr ""
+
+#: includes/export/class-exporter.php:201
+msgid "Exported"
+msgstr ""
+
+#: includes/export/class-exporter.php:202
+msgid "only the rows with a correction or a note"
+msgstr ""
+
+#: includes/export/class-exporter.php:206
+msgid "Warning"
+msgstr ""
+
+#: includes/export/class-exporter.php:210
+msgid "Synced patterns"
+msgstr ""
+
+#: includes/export/class-exporter.php:211
+msgid "reviewed separately"
+msgstr ""
+
+#. translators: %d: number of rows.
+#: includes/export/class-exporter.php:228
+#, php-format
+msgid "%d row"
+msgid_plural "%d rows"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of corrections.
+#: includes/export/class-exporter.php:230
+#, php-format
+msgid "%d correction"
+msgid_plural "%d corrections"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of notes.
+#: includes/export/class-exporter.php:232
+#, php-format
+msgid "%d note"
+msgid_plural "%d notes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of guidelines.
+#: includes/export/class-exporter.php:234
+#, php-format
+msgid "%d guideline"
+msgid_plural "%d guidelines"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/export/class-exporter.php:290
+msgid "About"
+msgstr ""
+
+#: includes/export/class-exporter.php:334
+#: includes/export/class-exporter.php:442
+msgid "No row to export."
+msgstr ""
+
+#. translators: %d: row number.
+#: includes/export/class-exporter.php:407
+#: includes/export/class-exporter.php:471
+#, php-format
+msgid "(row %d)"
+msgstr ""
+
+#: includes/export/class-exporter.php:438
+msgid "Each row gives the original text, then the correction and the note when there is one. The block name and its path locate the text in the content."
+msgstr ""
+
+#. translators: %s: index path of a block, e.g. 3.0.1.
+#: includes/export/class-exporter.php:451
+#, php-format
+msgid "path %s"
+msgstr ""
+
+#: includes/export/class-exporter.php:453
+msgid "Original"
+msgstr ""
+
+#: includes/export/class-guidelines-exporter.php:95
+msgid "guidelines"
+msgstr ""
+
+#. translators: %s: site name.
+#: includes/export/class-guidelines-exporter.php:140
+#, php-format
+msgid "Writing guidelines — %s"
+msgstr ""
+
+#. translators: 1: number of guidelines, 2: export date.
+#: includes/export/class-guidelines-exporter.php:144
+#, php-format
+msgid "%1$d guideline, exported on %2$s."
+msgid_plural "%1$d guidelines, exported on %2$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: excerpt of the text the guideline was written about.
+#: includes/export/class-guidelines-exporter.php:163
+#, php-format
+msgid "About: “%s”"
+msgstr ""
+
+#: includes/export/class-zip-writer.php:32
+msgid "Could not create a temporary file for the export."
+msgstr ""
+
+#: includes/export/class-zip-writer.php:39
+#: includes/export/class-zip-writer.php:46
+#: includes/export/class-zip-writer.php:63
+msgid "Could not write the export archive."
+msgstr ""
+
+#: assets/js/review.js:131
+msgid "Unsaved changes"
+msgstr ""
+
+#: assets/js/review.js:132
+msgid "Saving…"
+msgstr ""
+
+#: assets/js/review.js:133
+msgid "All changes saved"
+msgstr ""
+
+#: assets/js/review.js:134
+msgid "Some changes could not be saved."
+msgstr ""
+
+#: assets/js/review.js:141
+msgid "Retry"
+msgstr ""
+
+#: assets/js/review.js:252
+msgid "Not saved."
+msgstr ""

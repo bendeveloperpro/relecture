@@ -1,0 +1,366 @@
+/**
+ * Relecture: admin screens (contents, review table, guidelines).
+ *
+ * Colors come from the WordPress admin palette; everything is scoped under .relecture-wrap.
+ */
+
+.relecture-wrap {
+	--relecture-border: #c3c4c7;
+	--relecture-muted: #50575e;
+	--relecture-soft: #f6f7f7;
+	--relecture-correction: #fcf9e8;
+	--relecture-note: #f0f6fc;
+	--relecture-accent: #2271b1;
+	--relecture-error: #d63638;
+	--relecture-success: #00a32a;
+	--relecture-sticky-top: 32px;
+}
+
+.relecture-intro {
+	max-width: 70em;
+}
+
+/* ------------------------------------------------------------ Badges, states */
+
+.relecture-badge {
+	display: inline-block;
+	padding: 0 6px;
+	border-radius: 2px;
+	background: #f0f0f1;
+	color: var(--relecture-muted);
+	font-size: 12px;
+	line-height: 1.8;
+	vertical-align: baseline;
+}
+
+.relecture-state {
+	display: inline-block;
+	padding: 0 8px;
+	border-radius: 999px;
+	background: #f0f0f1;
+	color: #1d2327;
+	font-size: 12px;
+	line-height: 1.9;
+	white-space: nowrap;
+}
+
+.relecture-state-in_progress,
+.relecture-state-new {
+	background: #fcf0d4;
+}
+
+.relecture-state-ready {
+	background: #dbeafb;
+}
+
+.relecture-state-done,
+.relecture-state-integrated {
+	background: #d8f0dd;
+}
+
+.relecture-state-none {
+	background: transparent;
+	color: var(--relecture-muted);
+	padding-left: 0;
+}
+
+/* ------------------------------------------------------------- Review header */
+
+.relecture-meta,
+.relecture-rounds {
+	color: var(--relecture-muted);
+}
+
+.relecture-meta .relecture-state {
+	margin-left: 6px;
+}
+
+.relecture-rounds a,
+.relecture-rounds strong {
+	margin-left: 6px;
+}
+
+.relecture-workflow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 12px 0;
+}
+
+.relecture-workflow form {
+	margin: 0;
+}
+
+.relecture-outdated form p {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.relecture-start {
+	max-width: 46em;
+	padding: 16px 20px;
+	border: 1px solid var(--relecture-border);
+	background: #fff;
+}
+
+/* ------------------------------------------------------------------- Toolbar */
+
+.relecture-toolbar {
+	position: sticky;
+	top: var(--relecture-sticky-top);
+	z-index: 20;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px 20px;
+	margin: 12px 0 0;
+	padding: 8px 12px;
+	border: 1px solid var(--relecture-border);
+	background: #fff;
+}
+
+.relecture-filter {
+	display: flex;
+	gap: 4px;
+}
+
+.relecture-filter .button[aria-pressed="true"] {
+	border-color: var(--relecture-accent);
+	background: var(--relecture-accent);
+	color: #fff;
+}
+
+.relecture-counters {
+	display: flex;
+	gap: 12px;
+	margin: 0;
+	color: var(--relecture-muted);
+}
+
+.relecture-save-state {
+	margin: 0;
+	min-height: 1.5em;
+	color: var(--relecture-muted);
+}
+
+.relecture-save-state.is-saved {
+	color: var(--relecture-success);
+}
+
+.relecture-save-state.is-error {
+	color: var(--relecture-error);
+	font-weight: 600;
+}
+
+.relecture-export {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 0 auto;
+}
+
+.relecture-export-guidelines {
+	margin: 12px 0;
+}
+
+/* --------------------------------------------------------------------- Table */
+
+.relecture-table {
+	table-layout: fixed;
+	margin-top: 0;
+	border-top: 0;
+}
+
+.relecture-table thead th {
+	position: sticky;
+	top: calc(var(--relecture-sticky-top) + var(--relecture-toolbar-height, 52px));
+	z-index: 10;
+	background: #fff;
+	box-shadow: inset 0 -1px 0 var(--relecture-border);
+}
+
+.relecture-table .relecture-col-original {
+	width: 34%;
+}
+
+.relecture-table tbody th,
+.relecture-table tbody td {
+	vertical-align: top;
+	padding: 10px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.relecture-table tbody th.relecture-original {
+	font-weight: 400;
+	text-align: left;
+}
+
+.relecture-table tr[hidden] {
+	display: none !important;
+}
+
+.relecture-number {
+	display: inline-block;
+	min-width: 1.6em;
+	margin-right: 4px;
+	color: var(--relecture-muted);
+	font-variant-numeric: tabular-nums;
+	font-weight: 600;
+}
+
+.relecture-original-text {
+	margin-top: 6px;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.relecture-field {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 4.2em;
+	resize: vertical;
+	font-size: 14px;
+	line-height: 1.6;
+	field-sizing: content;
+}
+
+.relecture-correction-tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 4px 12px;
+	margin-top: 6px;
+	font-size: 12px;
+}
+
+.relecture-status {
+	display: none;
+	align-items: center;
+	gap: 6px;
+}
+
+.relecture-row.has-correction .relecture-status {
+	display: inline-flex;
+}
+
+.relecture-status select {
+	min-height: 26px;
+	font-size: 12px;
+}
+
+.relecture-guideline {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 6px;
+	font-size: 12px;
+}
+
+.relecture-row.has-correction .relecture-correction {
+	background: var(--relecture-correction);
+}
+
+.relecture-row.has-note .relecture-note {
+	background: var(--relecture-note);
+}
+
+.relecture-row.is-guideline .relecture-note {
+	box-shadow: inset 3px 0 0 var(--relecture-accent);
+}
+
+.relecture-row.is-error .relecture-original,
+.relecture-row.is-conflict .relecture-original {
+	box-shadow: inset 3px 0 0 var(--relecture-error);
+}
+
+.relecture-row-message {
+	margin: 8px 0 0;
+	color: var(--relecture-error);
+	font-weight: 600;
+}
+
+.relecture-row-info td,
+.relecture-row-info th {
+	background: var(--relecture-soft);
+	color: var(--relecture-muted);
+}
+
+.relecture-row-heading th {
+	font-weight: 600;
+	text-align: left;
+}
+
+.relecture-group-orphaned .relecture-original-text {
+	text-decoration: line-through;
+	text-decoration-color: rgba(80, 87, 94, 0.5);
+}
+
+/* Guidelines list */
+
+.relecture-guideline-text {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------- Responsive */
+
+@media screen and (max-width: 782px) {
+	.relecture-wrap {
+		--relecture-sticky-top: 46px;
+	}
+
+	.relecture-export {
+		margin-left: 0;
+	}
+
+	.relecture-table thead {
+		display: none;
+	}
+
+	.relecture-table,
+	.relecture-table tbody,
+	.relecture-table tr,
+	.relecture-table tbody th,
+	.relecture-table tbody td {
+		display: block;
+		width: auto;
+		box-sizing: border-box;
+	}
+
+	.relecture-table tr.relecture-row {
+		border-bottom: 2px solid var(--relecture-border);
+	}
+
+	.relecture-table td[data-colname]::before {
+		content: attr(data-colname);
+		display: block;
+		margin-bottom: 4px;
+		font-weight: 600;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	/* The admin bar scrolls away under 600 px. */
+	.relecture-wrap {
+		--relecture-sticky-top: 0px;
+	}
+
+	.relecture-toolbar {
+		position: static;
+	}
+}
+
+@media print {
+	.relecture-toolbar,
+	.relecture-workflow,
+	.relecture-correction-tools,
+	.relecture-guideline {
+		display: none;
+	}
+}
