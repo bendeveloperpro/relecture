@@ -33,6 +33,8 @@ reviews, ready to feed the instructions of your next articles.
 
 Requires WordPress 6.5+ and PHP 7.4+ (tested on WordPress 6.5 and 7.1, PHP 7.4 lint and 8.3).
 
+![The review table](.wordpress-org/screenshot-1.png)
+
 ## Install
 
 Download or build `relecture-<version>.zip` (see [Development](#development)), then
@@ -104,11 +106,20 @@ podman exec relecture_dev_cli wp eval-file wp-content/plugins/relecture/tests/sm
 tests/check-exports.sh                          # exports opened by independent tools
 tests/security.sh                               # REST permissions, with application passwords
 podman exec relecture_dev_cli wp plugin check relecture \
-  --exclude-directories=dev,tests,docs,scripts,dist,vendor,.git \
+  --exclude-directories=dev,tests,docs,scripts,dist,vendor,.git,.wordpress-org \
   --exclude-files=.editorconfig,.gitattributes,.distignore,.gitignore,phpcs.xml.dist,README.md,CHANGELOG.md,SECURITY.md
 podman run --rm -v "$PWD":/app:z -w /app docker.io/library/composer:2 sh -c 'composer install && vendor/bin/phpcs'
 scripts/i18n.sh                                 # .pot, then fr_FR .mo / .l10n.php / .json
 scripts/build-zip.sh                            # dist/relecture-<version>.zip
+```
+
+`.wordpress-org/` holds the directory assets (icon, screenshots). To refresh the screenshots,
+start an English instance seeded with `dev/screenshots.php`:
+
+```bash
+cd dev
+RELECTURE_ENV=shots RELECTURE_PORT=8092 podman-compose -p relecture-shots up -d
+RELECTURE_ENV=shots RELECTURE_PORT=8092 WP_LOCALE=en_US RELECTURE_SEED=screenshots ./setup.sh
 ```
 
 The test accounts' passwords are written to `dev/.credentials-dev` (git-ignored). No build

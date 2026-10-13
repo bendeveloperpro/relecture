@@ -5,6 +5,8 @@
 #   RELECTURE_ENV    instance name (default: dev)        → containers relecture_<env>_*
 #   RELECTURE_PORT   published port (default: 8090)
 #   WP_CORE_VERSION  core version to install (default: 7.1.3, same as the production sites)
+#   WP_LOCALE        site language (default: fr_FR; en_US keeps WordPress in English)
+#   RELECTURE_SEED   content script in dev/ (default: seed; screenshots for WordPress.org)
 #
 # Credentials of the test accounts are written to dev/.credentials-<env> (git-ignored).
 set -euo pipefail
@@ -12,6 +14,8 @@ set -euo pipefail
 ENV_NAME="${RELECTURE_ENV:-dev}"
 PORT="${RELECTURE_PORT:-8090}"
 CORE_VERSION="${WP_CORE_VERSION:-7.1.3}"
+LOCALE="${WP_LOCALE:-fr_FR}"
+SEED="${RELECTURE_SEED:-seed}"
 CLI="relecture_${ENV_NAME}_cli"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 CREDENTIALS="$HERE/.credentials-$ENV_NAME"
@@ -51,7 +55,9 @@ if ! wp core is-installed 2>/dev/null; then
     echo "admin $admin_pass" >> "$CREDENTIALS"
 fi
 
-wp language core install fr_FR --activate >/dev/null 2>&1 || echo "  (fr_FR language pack unavailable: is the network down?)" >&2
+if [ "$LOCALE" != "en_US" ]; then
+    wp language core install "$LOCALE" --activate >/dev/null 2>&1 || echo "  ($LOCALE language pack unavailable: is the network down?)" >&2
+fi
 wp rewrite structure '/%postname%/' --hard >/dev/null
 
 for role in editor author contributor; do
@@ -63,7 +69,7 @@ for role in editor author contributor; do
 done
 
 wp plugin activate relecture
-wp eval-file wp-content/plugins/relecture/dev/seed.php
+wp eval-file "wp-content/plugins/relecture/dev/$SEED.php"
 
 echo
 echo "✔ http://localhost:$PORT/wp-admin/admin.php?page=relecture"

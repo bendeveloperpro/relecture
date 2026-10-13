@@ -1,5 +1,6 @@
 # Keep the archives of releases (git archive, GitHub “Download ZIP”) to the plugin itself.
 /.github          export-ignore
+/.wordpress-org   export-ignore
 /.gitattributes   export-ignore
 /.gitignore       export-ignore
 /.distignore      export-ignore
